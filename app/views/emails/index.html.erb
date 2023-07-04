@@ -1,0 +1,21 @@
+    <h1> Emails Sent </h1>
+    <div class="mb-4 mt-4 flex self-end justify-end">
+        <%= link_to "New Email", new_email_path, class: "text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800" %>
+    </div>
+    
+    <div id="preview-pane" class="flex-row flex">
+        <div id="Emails" class="flex-none">
+            <% @emails.each do |email| %>
+                <div class="mr-2 border-b hover:bg-sky-700">
+                    <div><%= link_to email.subject, email_path(email), data: {turbo_frame: "email-details"} %> </div>
+                    <div class="text-sm text-slate-300"><%= email.created_at.to_s(:short) %> </div>
+                </div>    
+            <% end %>
+        </div> 
+
+        <div id ="email preview" class="flex-auto border p-8 h-[60vh] ">  
+            <%= turbo_frame_tag "email-details" do %>
+                THIS IS THE PREVIEW 
+            <% end %>    
+        </div>
+    </div>
