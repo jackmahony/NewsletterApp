@@ -1,7 +1,6 @@
 <div id ="email preview" class="flex-auto border p-8 h-screen">  
     <%= turbo_frame_tag "email-details" do %>
         <%= @email.subject%>
-        <br>
         <%= @email.body%>
     <% end %>    
 </div>

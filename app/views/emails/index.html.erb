@@ -8,7 +8,7 @@
             <% @emails.each do |email| %>
                 <div class="mr-2 border-b hover:bg-sky-700">
                     <div><%= link_to email.subject, email_path(email), data: {turbo_frame: "email-details"} %> </div>
-                    <div class="text-sm text-slate-300"><%= email.created_at.to_s(:short) %> </div>
+                    <div class="text-sm text-slate-300"><%= email.created_at.to_fs(:short) %> </div>
                 </div>    
             <% end %>
         </div> 

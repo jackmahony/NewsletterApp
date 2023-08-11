@@ -4,7 +4,12 @@ class NewsletterMailer < ApplicationMailer
     @subscriber = subscriber
     @email = email
 
-    mail to: @subscriber.email, subject: @email.subject
+    mail to: @subscriber.email, subject: @email.subject do |format|
+        format.html do
+          render layout: "layout"
+        end
+        end
+    end
 
   end
 end
