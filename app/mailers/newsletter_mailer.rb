@@ -1,15 +1,11 @@
 class NewsletterMailer < ApplicationMailer
-
-  def email(subscriber, email)
-    @subscriber = subscriber
-    @email = email
-
-    mail to: @subscriber.email, subject: @email.subject do |format|
-        format.html do
-          render layout: "layout"
-        end
-        end
-    end
+  
+  def newsletter_email
+    @email = params[:email]
+    template = Template.find(@email.template_id)
+    template_name = template.name
+  
+    mail to: "example@gmail.com", subject: template_name
 
   end
 end

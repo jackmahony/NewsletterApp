@@ -10,10 +10,20 @@ class EmailsController < ApplicationController
     def create
         @email = Email.new(email_params)
 
+        # Get the value of the "template" dropdown
+        # template_name = params[:email][:template]
+
+        # Set the email's template based on the value of the dropdown
+        # @email.template = template_name
+
+
+
         if @email.save
-            Subscriber.all.each do |subscriber|
-                NewsletterMailer.email(subscriber, @email).deliver_now
-            end    
+            # Subscriber.all.each do |subscriber|
+                NewsletterMailer.with(email: @email).newsletter_email.deliver_now
+
+                # Pass in TEMPLATE_NAME so that the mailer can use that variable to render the corresponding template 
+            # end    
 
             redirect_to emails_path, notice: "Email sent"
         else
@@ -28,7 +38,7 @@ class EmailsController < ApplicationController
     private
 
     def email_params
-        params.require(:email).permit(:subject, :body)
-    end    
+        params.require(:email).permit(:subject, :body, :template_id)
+    end  
 
 end    
