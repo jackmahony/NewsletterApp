@@ -8,10 +8,10 @@
     <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
       <tr>
         <th scope="col" class="px-6 py-3">
-          Title
+          Name
         </th>
         <th scope="col" class="px-6 py-3">
-          Content
+          Template content
         </th>
         <th scope="col" class="px-6 py-3">
           Actions
@@ -22,9 +22,9 @@
     <tbody>
       <% @templates.each do |template| %>
         <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-          <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"><%= template.name %></th>
+          <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"><%= template.body %></th>
           
-          <td><%= template.body %></td>
+          <td><%= template.name %></td>
 
           <td><%= link_to "Edit", edit_template_path(template), class: "mr-6 text-blue-800" %> 
           

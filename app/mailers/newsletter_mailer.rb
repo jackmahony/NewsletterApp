@@ -4,7 +4,7 @@ class NewsletterMailer < ApplicationMailer
     @email = params[:email]
     template = Template.find_by(id: @email.template_id)
 
-    mail to: "example@gmail.com", subject: @email.subject, template_name: template.name
+    mail to: "example@gmail.com", subject: @email.subject, template_name: template.template_name
     
 
 
