@@ -1,7 +1,8 @@
 <table>
     <tr>
-      <td colspan="2" class="header">
-        <h1>Newsletter Email! </h1>
+      <td colspan="2" class="">
+        <h1><%= @email.template.body %></h1>
+
         <img src="https://via.placeholder.com/100x100" class="placeholder" alt="Placeholder Image">
         <style>
           .header {
@@ -12,17 +13,18 @@
 
           body {
             width: 750px;
+
           }
         </style>
       </td>
     </tr>
     <tr>
-      <%# <td class="body"><%= @email.body %></td> %>
+      <td class="body"><%= @email.body %> </td>
     </tr>
     <tr>
       <td colspan="2" class="footer">
         <p>Thanks,</p>
-        <p>Your Name</p>
+        <p>View template 1</p>
         <style>
           .footer {
             background-color: #f0f0f0;

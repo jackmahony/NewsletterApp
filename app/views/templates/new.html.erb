@@ -1,8 +1,8 @@
 <div class= "">
   <%= form_with model: @template do |form| %>
     <div>
-        <%= form.label :name, "Name" %>
-        <%= form.text_field :name %>    
+        <%= form.label :name, "Type" %>
+        <%= form.select :name, [ ["Newsletter", "newsletter_email"], ["Product","product_email"]] %>    
     </div>
     <div class="mt-6">
         <%= form.label :body, "Body" %>

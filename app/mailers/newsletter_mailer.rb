@@ -2,10 +2,14 @@ class NewsletterMailer < ApplicationMailer
   
   def newsletter_email
     @email = params[:email]
-    template = Template.find(@email.template_id)
-    template_name = template.name
-  
-    mail to: "example@gmail.com", subject: template_name
+    template = Template.find_by(id: @email.template_id)
+
+    mail to: "example@gmail.com", subject: @email.subject, template_name: template.name
+    
+
+
+
+    # Pass in saved template_name to render view
 
   end
 end

@@ -1,9 +1,15 @@
 <h1> New Email </h1>
 
 <%= form_with model: @email do |f| %>
+
     <div>
-        <%# <%= f.select :template_id,  %>
-          <%= f.select :template_id, [["Template one", "1"], ["Template 2", "2"], ["Template 3", "3"]] %>
+          <%# <%= f.select :template_id, [["Golden quarter", "9"], ["Template 2", "2"], ["Template 3", "3"],["Product newsletter", "6"]] %> 
+
+        <%# ADD DROPDOWN HERE %>
+        <%= f.select :template_id, @templates.all.map { |template| [template.body, template.id] } %>
+    
+
+
     </div>
 
     <div><%= f.text_field :subject, class:"bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" %> </div>

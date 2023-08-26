@@ -5,22 +5,15 @@ class EmailsController < ApplicationController
 
     def new
         @email = Email.new
+        @templates = Template.all
     end    
 
     def create
         @email = Email.new(email_params)
 
-        # Get the value of the "template" dropdown
-        # template_name = params[:email][:template]
-
-        # Set the email's template based on the value of the dropdown
-        # @email.template = template_name
-
-
-
         if @email.save
             # Subscriber.all.each do |subscriber|
-                NewsletterMailer.with(email: @email).newsletter_email.deliver_now
+                NewsletterMailer.with(email: @email, template: @template).newsletter_email.deliver_now
 
                 # Pass in TEMPLATE_NAME so that the mailer can use that variable to render the corresponding template 
             # end    

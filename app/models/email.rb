@@ -1,3 +1,3 @@
 class Email < ApplicationRecord
-  has_one :template
+  belongs_to :template
 end
