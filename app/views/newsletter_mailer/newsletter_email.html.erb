@@ -1,36 +1,77 @@
-<table>
-    <tr>
-      <td colspan="2" class="">
-        <h1><%= @email.template.body %></h1>
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= @email.subject%></title>
+  <style>
+    /* Header */
+    body {
+      max-width: 750px;
+      display: block;
+      margin: auto;
+    }
+    header {
+      background-color: #fff;
+      padding: 5px;
+      color: #ffffff;
+      text-align: center;
+      margin-top: 0;
+    }
+    h1 {
+      font-size: 24px;
+      margin-bottom: 0;
+      color: #000;
+    }
+    /* Footer */
+    footer {
+      background-color: #cbd5e1;
+      padding: 20px;
+      text-align: center;
+    }
+    .social-icons {
+      margin-top: 10px;
+    }
+    .social-icon {
+      display: inline-block;
+      margin-right: 10px;
+      width: 30px;
+      height: 30px;
+      background-color: #ffffff;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 30px;
+      color: #000000;
+    }
+    code {
+      max-width: 500px;
+    }
+    svg {
+      display: block;
+      margin: auto;
+      margin-top: 5px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="product">
+      <h2>Newsletter</h2>  
+    </div>
+    
 
-        <img src="https://via.placeholder.com/100x100" class="placeholder" alt="Placeholder Image">
-        <style>
-          .header {
-            background-color: #f0f0f0;
-            padding: 20px;
-            text-align: center;
-          }
+    <h1><%= @email.template.body %></h1>
 
-          body {
-            width: 750px;
+  </header>
 
-          }
-        </style>
-      </td>
-    </tr>
-    <tr>
-      <td class="body"><%= @email.body %> </td>
-    </tr>
-    <tr>
-      <td colspan="2" class="footer">
-        <p>Thanks,</p>
-        <p>View template 1</p>
-        <style>
-          .footer {
-            background-color: #f0f0f0;
-            padding: 20px;
-          }
-        </style>
-      </td>
-    </tr>
-  </table>
+  <main>
+    <!-- Your email content goes here -->
+  <p><%= @email.body %></p>
+  <p> Kind regards,</p>
+  <p>The marketing team </p>
+
+  </main>
+
+  <footer>
+    <p>Copyright &copy; 2023 My Company. All rights reserved.</p>
+  </footer>
+</body>
+</html>

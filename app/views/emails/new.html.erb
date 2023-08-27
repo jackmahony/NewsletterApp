@@ -4,7 +4,7 @@
 
     <div class="mt-6">
         <%= f.label :template_id, "Choose a template", class:"block mb-2 text-sm font-medium text-gray-900 dark:text-white"%>
-        <%= f.select :template_id, @templates.all.map { |template| [template.body, template.id] }, class:"block text-gray-700 text-sm font-bold mb-2" %>
+        <%= f.select :template_id, @templates.all.map { |template| [template.name, template.id] }, class:"block text-gray-700 text-sm font-bold mb-2" %>
     </div>
 
 
