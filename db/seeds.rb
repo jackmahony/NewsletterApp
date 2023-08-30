@@ -2,17 +2,20 @@
 template1 = Template.create!(
   name: 'General business template',
   template_name: 'standard_email',
-  body: 'General update')
+  header: 'General update',
+  footer: 'General update footer')
 
 template2 = Template.create!(
   name: 'New product release',
   template_name: 'product_email',
-  body: 'New features')
+  header: 'New features header',
+  footer: 'New features footer')
 
 template3 = Template.create!(
   name: 'Monthly newsletter',
   template_name: 'newsletter_email',
-  body: 'Monthly newsletter')
+  header: 'Monthly newsletter',
+  footer: 'Montly newsletter footer')
 
   email1 = Email.create!(
     subject: "New CEO joins <email company>",

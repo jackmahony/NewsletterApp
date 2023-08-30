@@ -11,7 +11,10 @@
           Name
         </th>
         <th scope="col" class="px-6 py-3">
-          Template content
+          Template header
+        </th>
+        <th scope="col" class="px-6 py-3">
+          Template footer
         </th>
         <th scope="col" class="px-6 py-3">
           Actions
@@ -24,7 +27,8 @@
         <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
           <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"><%= template.name %></th>
           
-          <td><%= template.body %></td>
+          <td><%= template.header %></td>
+          <td><%= template.footer %></td>
 
           <td><%= link_to "Edit", edit_template_path(template), class: "mr-6 text-blue-800" %> 
           

@@ -44,7 +44,7 @@ class TemplatesController < ApplicationController
     private
     
     def template_params
-        params.require(:template).permit(:id, :name, :body, :template_name)
+        params.require(:template).permit(:id, :name, :header, :footer, :template_name)
     end
 
 end    
